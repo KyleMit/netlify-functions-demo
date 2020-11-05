@@ -4,15 +4,15 @@ require('dotenv').config()
 const TABLE_NAME = "NetlifyTodos";
 
 // destructure env variables
-const { AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION } = process.env
+const { MY_AWS_ACCESS_KEY_ID, MY_AWS_SECRET_ACCESS_KEY, MY_AWS_REGION } = process.env
 
 // gets credentials from ~/.aws/config
 AWS.config.update({
     credentials: {
-        accessKeyId: AWS_ACCESS_KEY_ID,
-        secretAccessKey: AWS_SECRET_ACCESS_KEY
+        accessKeyId: MY_AWS_ACCESS_KEY_ID,
+        secretAccessKey: MY_AWS_SECRET_ACCESS_KEY
     },
-    region: AWS_REGION,
+    region: MY_AWS_REGION,
 });
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
